@@ -1,0 +1,15 @@
+Package: tanmisc
+Type: Package
+Title: Tantastic, Miscellaneous, and Mostly Shiny Functions
+Version: 0.1.0
+Author: Tan Ho
+Maintainer: Tan Ho <tan@tanho.ca>
+Description: Various helper functions saved and generalized for future use.
+License: MIT + file
+Encoding: UTF-8
+LazyData: true
+RoxygenNote: 7.1.0
+Imports:
+  shiny,
+  purrr,
+  htmltools
