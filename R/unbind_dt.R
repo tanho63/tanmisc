@@ -11,8 +11,8 @@
 #'
 #' @export
 unbind_dt_js <- function()
-  {htmltools::tags$head(
-    htmltools::tags$script(
+  {shiny::tags$head(
+    shiny::tags$script(
       'Shiny.addCustomMessageHandler("unbind_table_elements", function(x) {
               Shiny.unbindAll($(document.getElementById(x)).find(".dataTable"));
                         });'
