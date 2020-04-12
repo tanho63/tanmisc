@@ -10,18 +10,10 @@ Install from GitHub with:
 remotes::install_github("tanho63/tanmisc")
 ```
 
-## Examples
+## Functions List
 
-This is a basic example which shows you how to solve a common problem - the problem of not laughing enough!
-
-``` r
-joker::dadjoke()
-[1] "Can a kangaroo jump higher than the Empire State Building? Of course. The Empire State Building can't jump."
-
-joker::chuckjoke()
-[1] "There is no Esc key on Chuck Norris' keyboard, because no one escapes Chuck Norris."
-
-joker::randomjoke()
-[1] "Chuck Norris makes onions cry."
-```
+- `gen_input_*()` generates a list of Shiny Inputs (either for a list of length *n* or for a given list of identifiers)
+- `read_inputs()` returns the values of a given list of input IDs
+- `unbind_dt()` "unbinds" the Shiny inputs in a table, which is helpful if they are generated/regenerated reactively.
+- `fmt_tblcol_*()` colours a table column based on
 
