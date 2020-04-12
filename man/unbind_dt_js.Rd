@@ -11,8 +11,8 @@ Adds JS to HTML head
 }
 \description{
 When generating inputs reactively, it's sometimes necessary to unbind old inputs so that you can use the updated inputs in Shiny.
-`\code{"unbind_dt_js()"} needs to be called in the UI so that the JS code is available in the session,
-and then \code{unbind_dt()} should be called as needed in the server component (usually as part of an observeEvent or eventReactive)
+`\code{unbind_dt_js()} adds the JS to the UI, while \code{unbind_dt()} is called as needed in the server component
+(usually as part of an \code{observeEvent} or \code{eventReactive})
 }
 \examples{
 unbind_dt_js()
