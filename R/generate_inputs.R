@@ -42,7 +42,7 @@ gen_input_map <- function(FUN,id_prefix,uid,...){
   if(length(uid)!=length(unique(uid))){stop("All values of uid must be unique")}
   if(!is.character(id_prefix) | length(id_prefix)!=1){stop("id_prefix must be a character vector of length one")}
 
-  input_ids <- purrr::map(identifier,~paste0(id_prefix,.))
+  input_ids <- purrr::map(uid,~paste0(id_prefix,.))
 
   purrr::map_chr(purrr::map(input_ids,FUN,...),as.character)
 
