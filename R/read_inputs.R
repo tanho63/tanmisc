@@ -11,7 +11,7 @@
 #'
 #' @export
 
-read_inputs <- function(inputid,nullarg = NA,type = c('chr','dbl','lgl','int')){
+read_inputs <- function(inputid,nullarg = NA,type = c('chr','dbl','lgl','int'),input = input){
 
   map_function <- switch(match.arg(type),
                          'chr' = purrr::map_chr,
