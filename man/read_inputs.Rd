@@ -4,14 +4,21 @@
 \alias{read_inputs}
 \title{Read a sequence of Shiny Inputs}
 \usage{
-read_inputs(inputid, nullarg = NA, type = c("chr", "dbl", "lgl", "int"))
+read_inputs(
+  inputid = NULL,
+  nullarg = NA,
+  type = c("chr", "dbl", "lgl", "int"),
+  input_obj = get("input", envir = shiny::getDefaultReactiveDomain())
+)
 }
 \arguments{
 \item{inputid}{a vector of inputids to read}
 
 \item{nullarg}{the value to return if the input value is \code{NULL} i.e. missing}
 
-\item{type}{one of \code{('chr','dbl','lgl','int')} - specifies type of vector to return}
+\item{type}{one of \code{('chr','dbl','lgl','int')} - specifies type of atomic vector to return}
+
+\item{input_obj}{the input object from the Shiny session (hopefully.)}
 }
 \value{
 a vector of values
@@ -20,6 +27,5 @@ a vector of values
 Read a sequence of Shiny Inputs
 }
 \examples{
-read_inputs(c('select_1','select_2'),nullarg = NA,type = 'chr')
-
+read_inputs(inputid = c('select_1','select_2'), nullarg = NA, type = 'chr')
 }
