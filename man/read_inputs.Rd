@@ -8,7 +8,7 @@ read_inputs(
   inputid = NULL,
   nullarg = NA,
   type = c("chr", "dbl", "lgl", "int"),
-  input_obj = get("input", envir = shiny::getDefaultReactiveDomain())
+  .env = shiny::getDefaultReactiveDomain()
 )
 }
 \arguments{
@@ -18,7 +18,7 @@ read_inputs(
 
 \item{type}{one of \code{('chr','dbl','lgl','int')} - specifies type of atomic vector to return}
 
-\item{input_obj}{the input object from the Shiny session (hopefully.)}
+\item{.env}{the environment to look for the input - defaults to the default reactive domain}
 }
 \value{
 a vector of values

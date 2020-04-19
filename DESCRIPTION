@@ -1,7 +1,7 @@
 Package: tanmisc
 Type: Package
 Title: Tantastic, Miscellaneous, and Mostly Shiny Functions
-Version: 0.1.3
+Version: 0.1.4
 Author: Tan Ho
 Maintainer: Tan Ho <tan@tanho.ca>
 Description: Various helper functions saved and generalized for future use.

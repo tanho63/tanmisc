@@ -3,7 +3,7 @@
 #' @param inputid a vector of inputids to read
 #' @param nullarg the value to return if the input value is \code{NULL} i.e. missing
 #' @param type one of \code{('chr','dbl','lgl','int')} - specifies type of atomic vector to return
-#' @param input_obj the input object from the Shiny session (hopefully.)
+#' @param .env the environment to look for the input - defaults to the default reactive domain
 #'
 #' @return a vector of values
 #'
@@ -14,7 +14,10 @@
 read_inputs <- function(inputid = NULL,
                         nullarg = NA,
                         type = c('chr','dbl','lgl','int'),
-                        input_obj = get('input',envir = shiny::getDefaultReactiveDomain())){
+                        .env = shiny::getDefaultReactiveDomain()
+                        ){
+
+  input <- get("input",envir = .env)
 
   map_function <- switch(match.arg(type),
                          'chr' = purrr::map_chr,
@@ -22,6 +25,6 @@ read_inputs <- function(inputid = NULL,
                          'lgl' = purrr::map_lgl,
                          'int' = purrr::map_int)
 
-  map_function(inputid,~ if(!is.null(input_obj[[..1]])){input_obj[[..1]]} else {nullarg})
+  map_function(inputid,~ if(!is.null(input[[..1]])){input[[..1]]} else {nullarg})
 
 }
