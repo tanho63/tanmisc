@@ -18,7 +18,7 @@
 #' @export
 
 fmt_dtcol <- function(dt,df,col_id,
-                            col_range = "Auto",
+                            column_range = "Auto",
                             colours = c('#af8dc3','#FFFFFF','#7fbf7b')){
 
   if (column_range!="Auto" && !is.numeric(column_range)){stop("column_range must be a numeric vector or 'Auto'")}
